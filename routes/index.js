@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var _ = require('underscore');
+var config = require('../config');
 
 
 router.get('*', function(req, res) {
 
   options = {
-    url: 'http://www.google.com',
+    url: config.url,
     qs: _.omit(req.query, 'proxy_key')
   };
 
